@@ -19,7 +19,7 @@ export const StateContextProvider = ({ children }) => {
     fetchData();
   }, [show]);
   const fetchData = async () => {
-    const file = await fetch("http://localhost:8080/data");
+    const file = await fetch("https://qr-backend-g3ui.onrender.com/data");
     const { merchants } = await file.json();
     setMerchantData(merchants);
 
