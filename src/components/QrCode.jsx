@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./qrcode.scss";
 import QrForm from "./QrForm";
 
-const QrCode = () => {
+const QrCode = ({ onShow }) => {
   const [qrCodeData, setQRCodeData] = useState(``);
-  useEffect(() => {}, [qrCodeData]);
+  // useEffect(() => {}, [qrCodeData]);
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
   //   const merchantName = merchantNameRef.current.value;
@@ -28,7 +28,7 @@ const QrCode = () => {
   return (
     <React.Fragment>
       <div className="form-container">
-        <QrForm show={setQRCodeData} />
+        <QrForm show={setQRCodeData} onShow={onShow} />
         {qrCodeData && <img src={qrCodeData} alt="QR code" />}
       </div>
     </React.Fragment>

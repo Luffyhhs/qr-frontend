@@ -1,6 +1,4 @@
-import React, { Fragment, useContext, useRef } from "react";
-import StateContext from "../context/StateContext";
-import { Link } from "react-router-dom";
+import React, { Fragment, useRef } from "react";
 
 const categoryList = [
   "Telecommunication Equipment and Telephone Sales",
@@ -16,8 +14,6 @@ const categoryList = [
 ];
 
 const QrForm = (props) => {
-  const dataCtx = useContext(StateContext);
-  const { setShow } = dataCtx;
   const merchantIdRef = useRef();
   const merchantNameRef = useRef();
   const merchantCityRef = useRef();
@@ -55,6 +51,7 @@ const QrForm = (props) => {
     } catch (err) {
       console.log("Error saving json file:", err);
     }
+    props.onShow();
   };
 
   //
@@ -149,15 +146,6 @@ const QrForm = (props) => {
 
         <button className="btn">Generate</button>
       </form>
-      <Link to={"/"}>
-        <button
-          onClick={() => {
-            setShow(true);
-          }}
-        >
-          go and show
-        </button>
-      </Link>
     </Fragment>
   );
 };
