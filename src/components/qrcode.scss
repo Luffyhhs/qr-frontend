@@ -1,0 +1,58 @@
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--secondary);
+  position: relative;
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background-color: var(--white);
+    padding: 2.4rem 1.2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    .header {
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .label {
+      font-size: 16px;
+      margin-right: 0.5rem;
+      align-self: flex-start;
+    }
+    .select {
+      width: 100%;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .input {
+      width: 100%;
+      outline: none;
+      padding: 5px;
+    }
+
+    .btn {
+      width: 10rem;
+      padding: 0.9rem 0;
+      font-size: 1.6rem;
+      border: none;
+      outline: none;
+      background-color: var(--light-gold);
+      color: var(--text-color);
+      border-radius: 0.9rem;
+      display: inline-block;
+      margin-top: 3rem;
+      cursor: pointer;
+    }
+  }
+}
