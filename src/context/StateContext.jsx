@@ -6,7 +6,7 @@ export const StateContextProvider = ({ children }) => {
   const [merchantData, setMerchantData] = useState([]);
   const [select, setSelect] = useState("");
   const [show, setShow] = useState(false);
-  const [img, setImg] = useState("");
+  // const [img, setImg] = useState("");
 
   useEffect(() => {
     // dispatch({ type: "SHOW", payload: merchantData });
@@ -19,9 +19,10 @@ export const StateContextProvider = ({ children }) => {
     fetchData();
   }, [show]);
   const fetchData = async () => {
-    const file = await fetch("https://qr-backend-g3ui.onrender.com/data");
-    const data = await file.json();
-    setMerchantData(data);
+    const file = await fetch("http://localhost:8080/data");
+    const { merchants } = await file.json();
+    setMerchantData(merchants);
+
     // dispatch({ type: "SHOW", payload: data });
     setShow(false);
   };
