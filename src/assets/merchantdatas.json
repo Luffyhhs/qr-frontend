@@ -1,1 +1,14 @@
-{"merchants":[{"merchantName":"Default","merchantCity":"City","merchantId":"12345","merchantAcc":"1234567890","merchantCategory":"Category","merchantSubCategory":"Sub Category","merchantCountry":"Country","merchantCurrency":"CURRENCY"},{"merchantName":"Hein Htet","merchantCity":"Yangon","merchantId":"53215","merchantAcc":"934327","merchantCategory":"Telegraph Services","merchantSubCategory":"sub-category2","merchantCountry":"Myanmar","merchantCurrency":"MMK"},{"merchantName":"Thurein","merchantCity":"Yangon","merchantId":"64497","merchantAcc":"09439238932","merchantCategory":"Computer Network/Information Services","merchantSubCategory":"sub-category1","merchantCountry":"Myanmar","merchantCurrency":"MMK"},{"merchantName":"Wai Yan ","merchantCity":"Yangon","merchantId":"25","merchantAcc":"3297398","merchantCategory":"Telegraph Services","merchantSubCategory":"sub-category2","merchantCountry":"Myanmar","merchantCurrency":"MMK"}]}
+{
+  "merchants": [
+    {
+      "merchantName": "Default",
+      "merchantCity": "City",
+      "merchantId": "12345",
+      "merchantAcc": "1234567890",
+      "merchantCategory": "Category",
+      "merchantSubCategory": "Sub Category",
+      "merchantCountry": "Country",
+      "merchantCurrency": "CURRENCY"
+    }
+  ]
+}
