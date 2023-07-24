@@ -11,7 +11,7 @@ export const StateContextProvider = ({ children }) => {
   useEffect(() => {
     // dispatch({ type: "SHOW", payload: merchantData });
     const filteredData = merchantData.filter((data) =>
-      data.merchantName === select ? data : []
+      data.merchantId === select.merchantId ? data : []
     );
     dispatch({ type: "SELECT", payload: filteredData });
   }, [select, merchantData]);
