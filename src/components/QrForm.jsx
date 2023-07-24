@@ -41,7 +41,7 @@ const QrForm = (props) => {
     //http://localhost:8080 => test
     //https://qr-backend-g3ui.onrender.com =>build
     try {
-      const res = await fetch("http://localhost:8080/emv-rq", {
+      const res = await fetch("https://qr-backend-g3ui.onrender.com/emv-rq", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
