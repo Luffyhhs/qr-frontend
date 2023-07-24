@@ -46,17 +46,22 @@ const MerchantQr = () => {
 
   return (
     <div className="qr-check">
-      <div className="select-box">
-        <label htmlFor="options">Merchant Name</label>
+      <div className="top_box">
+        <div className="select-box">
+          <label htmlFor="options">Merchant Name</label>
 
-        <select id="options" value={select} onChange={handleOptionChange}>
-          <option value="">--Choose Name--</option>
-          {merchants.map((merchant) => (
-            <option value={merchant.merchantName} key={Math.random() * 1000}>
-              {merchant.merchantName}
-            </option>
-          ))}
-        </select>
+          <select id="options" value={select} onChange={handleOptionChange}>
+            <option value="">--Choose Name--</option>
+            {merchants.map((merchant) => (
+              <option value={merchant.merchantName} key={Math.random() * 1000}>
+                {merchant.merchantName}
+              </option>
+            ))}
+          </select>
+        </div>
+        <Link to={"/reqQr"}>
+          <button className="btn_create">Create New</button>
+        </Link>
       </div>
       <div className="show-box">
         <ul className="info-box">
@@ -89,9 +94,6 @@ const MerchantQr = () => {
           <img src={qr} alt="QR Code" />
 
           <div className="btn-box">
-            <Link to={"/reqQr"}>
-              <button className="button">Create New</button>
-            </Link>
             <ReactToPrint
               trigger={() => <button className="button">Print Preview</button>}
               content={() => qrRef.current}

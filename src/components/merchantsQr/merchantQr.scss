@@ -1,6 +1,6 @@
 .qr-check {
-  width: 100%;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
@@ -8,24 +8,43 @@
   gap: 3rem;
   font-size: 1.8rem;
   background-color: var(--secondary);
-  .select-box {
-    background-color: var(--light-gold);
-    padding: 0.8rem 1.6rem;
-    border-radius: 1rem;
-
-    label {
-      margin-right: 1.2rem;
-      color: var(--text-color);
-    }
-    select {
-      font-size: 1.6rem;
-      height: 4rem;
-      outline: none;
-      border: none;
+  .top_box {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    .select-box {
+      background-color: var(--light-gold);
+      padding: 0.8rem 1.6rem;
       border-radius: 1rem;
-      padding: 0.6rem 1.2rem;
+
+      label {
+        margin-right: 1.2rem;
+        color: var(--text-color);
+      }
+      select {
+        font-size: 1.6rem;
+        height: 4rem;
+        outline: none;
+        border: none;
+        border-radius: 1rem;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+    .btn_create {
+      width: 10rem;
+      padding: 0.9rem 0;
+      font-size: 1.6rem;
       border: none;
       outline: none;
+      background-color: var(--light-gold);
+      color: var(--text-color);
+      border-radius: 0.9rem;
+      display: inline-block;
       cursor: pointer;
     }
   }
