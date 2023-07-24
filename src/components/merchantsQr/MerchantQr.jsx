@@ -1,12 +1,10 @@
 import React, { useContext, useRef, useState } from "react";
-import qr from "../../assets/thurein_qr_code.png";
-
 import { Link } from "react-router-dom";
-
 import ReactToPrint from "react-to-print";
 import "./merchantQr.scss";
 import Print from "../print/Print";
 import StateContext from "../../context/StateContext";
+import qr from "../../assets/default_qr_code.png";
 
 const MerchantQr = () => {
   const [data, setData] = useState({
@@ -19,27 +17,26 @@ const MerchantQr = () => {
     merchantCity: "City",
     merchantCurrency: "CURRENCY",
   });
+  const [qrCode, setQrCode] = useState(qr);
   const dataCtx = useContext(StateContext);
 
   const {
     select,
     setSelect,
     state: { merchants },
-    img,
-    imgHandler,
   } = dataCtx;
-
-  console.log(img);
 
   const handleOptionChange = (e) => {
     const selectedValue = e.target.value;
-    setSelect(selectedValue);
-    imgHandler(selectedValue);
-
     if (selectedValue) {
       const selectedMerchant = merchants.find(
         (merchant) => merchant.merchantName === selectedValue
       );
+      const newQr = require(`../../assets/${selectedMerchant.merchantName
+        .replace(/\s/g, "_")
+        .toLowerCase()}_qr_code.png`);
+      setQrCode(newQr);
+      setSelect(selectedMerchant);
       setData(selectedMerchant);
       console.log(selectedMerchant);
     } else {
@@ -54,7 +51,11 @@ const MerchantQr = () => {
         <div className="select-box">
           <label htmlFor="options">Merchant Name</label>
 
-          <select id="options" value={select} onChange={handleOptionChange}>
+          <select
+            id="options"
+            value={select.merchantName}
+            onChange={handleOptionChange}
+          >
             <option value="">--Choose Name--</option>
             {merchants.map((merchant) => (
               <option value={merchant.merchantName} key={Math.random() * 1000}>
@@ -95,14 +96,14 @@ const MerchantQr = () => {
           </li>
         </ul>
         <div className="qr-box">
-          <img src={qr} alt="QR Code" />
+          <img src={qrCode} alt="QR" />
 
           <div className="btn-box">
             <ReactToPrint
               trigger={() => <button className="button">Print Preview</button>}
               content={() => qrRef.current}
             />
-            <Print name={select} ref={qrRef} />
+            <Print name={select.merchantName} qrCode={qrCode} ref={qrRef} />
           </div>
         </div>
       </div>

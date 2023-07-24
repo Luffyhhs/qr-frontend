@@ -1,4 +1,5 @@
 import React, { Fragment, useRef } from "react";
+// import StateContext from "../context/StateContext";
 
 const categoryList = [
   "Telecommunication Equipment and Telephone Sales",
@@ -14,6 +15,8 @@ const categoryList = [
 ];
 
 const QrForm = (props) => {
+  // const dataCtx = useContext(StateContext);
+  // const { imgHandler } = dataCtx;
   const merchantIdRef = useRef();
   const merchantNameRef = useRef();
   const merchantCityRef = useRef();
@@ -38,7 +41,7 @@ const QrForm = (props) => {
     //http://localhost:8080 => test
     //https://qr-backend-g3ui.onrender.com =>build
     try {
-      const res = await fetch("https://qr-backend-g3ui.onrender.com /emv-rq", {
+      const res = await fetch("http://localhost:8080/emv-rq", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +49,6 @@ const QrForm = (props) => {
         body: JSON.stringify([data]),
       });
       const jsonData = await res.json();
-
       console.log(jsonData.message);
 
       // await props.show(jsonData.qr);
