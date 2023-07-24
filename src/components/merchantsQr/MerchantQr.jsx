@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-// import qr from "../../assets/hein_qr_code.png";
+import qr from "../../assets/default_qr_code.png";
 import { Link } from "react-router-dom";
 
 import ReactToPrint from "react-to-print";
@@ -86,7 +86,7 @@ const MerchantQr = () => {
           </li>
         </ul>
         <div className="qr-box">
-          {/*<img src={qr} alt="QR Code" />*/}
+          <img src={qr} alt="QR Code" />
 
           <div className="btn-box">
             <Link to={"/reqQr"}>
