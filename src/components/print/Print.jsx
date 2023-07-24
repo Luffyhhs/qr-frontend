@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import qr from "../../assets/default_qr_code.png";
+import qr from "../../assets/thurein_qr_code.png";
 import cb from "../../assets/Central_Bank_of_Myanmar_seal.png";
 import mab from "../../assets/mab_logo.png";
 import "./print.scss";

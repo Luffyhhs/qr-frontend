@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
-import qr from "../../assets/default_qr_code.png";
+import qr from "../../assets/thurein_qr_code.png";
+
 import { Link } from "react-router-dom";
 
 import ReactToPrint from "react-to-print";
@@ -24,13 +25,16 @@ const MerchantQr = () => {
     select,
     setSelect,
     state: { merchants },
+    img,
+    imgHandler,
   } = dataCtx;
-  console.log(dataCtx);
-  console.log(merchants);
+
+  console.log(img);
 
   const handleOptionChange = (e) => {
     const selectedValue = e.target.value;
     setSelect(selectedValue);
+    imgHandler(selectedValue);
 
     if (selectedValue) {
       const selectedMerchant = merchants.find(
