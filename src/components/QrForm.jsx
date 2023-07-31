@@ -39,9 +39,9 @@ const QrForm = (props) => {
       merchantCurrency: currencyRef.current.value,
     };
     //http://localhost:8080 => test
-    //https://qr-backend-g3ui.onrender.com =>build
+    //https://qr-back.onrender.com =>build
     try {
-      const res = await fetch("https://qr-backend-g3ui.onrender.com/emv-rq", {
+      const res = await fetch("https://qr-back.onrender.com/emv-rq", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
