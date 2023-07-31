@@ -18,15 +18,23 @@ export const StateContextProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, [show]);
-  const fetchData = async () => {
+  async function fetchData() {
     //http://localhost:8080 => test
     //https://qr-back.onrender.com =>build
-    const file = await fetch("https://qr-back.onrender.com/data");
-    const { merchants } = await file.json();
-    setMerchantData(merchants);
-
-    setShow(false);
-  };
+    try {
+      const response = await fetch("https://qr-back.onrender.com/data", {
+        mode: "cors",
+      });
+      if (!response.ok) {
+        throw new Error("Request failed!");
+      }
+      const { merchants } = await response.json();
+      setMerchantData(merchants);
+      setShow(false);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   useEffect(() => {
     fetchData();
   }, []);
