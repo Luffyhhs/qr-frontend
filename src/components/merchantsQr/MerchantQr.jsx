@@ -35,7 +35,7 @@ const MerchantQr = () => {
       const newQr = require(`../../assets/${selectedMerchant.merchantName
         .replace(/\s/g, "_")
         .toLowerCase()}_qr_code.png`);
-      setQrCode(newQr);
+      setQrCode(newQr.default);
       setSelect(selectedMerchant);
       setData(selectedMerchant);
       console.log(selectedMerchant);
