@@ -23,7 +23,13 @@ export const StateContextProvider = ({ children }) => {
     //https://qr-back.onrender.com =>build
     try {
       const response = await fetch("https://qr-back.onrender.com/data", {
+        method: "GET",
         mode: "cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*", // Set the value to the appropriate domain
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "Content-Type",
+        },
       });
       if (!response.ok) {
         throw new Error("Request failed!");
