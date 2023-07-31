@@ -24,7 +24,7 @@ export const StateContextProvider = ({ children }) => {
     try {
       const response = await fetch("https://qr-back.onrender.com/data", {
         method: "GET",
-        mode: "cors",
+        mode: "no-cors",
         headers: {
           "Access-Control-Allow-Origin": "*", // Set the value to the appropriate domain
           "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
